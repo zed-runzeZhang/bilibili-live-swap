@@ -1,0 +1,8 @@
+node_modules/
+dist/
+artifacts/
+.browser-profile/
+release/
+.env
+.env.*
+*.log

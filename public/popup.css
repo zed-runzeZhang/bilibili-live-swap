@@ -1,0 +1,58 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1b2537;
+  background: #f7f8fb;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { width: 362px; margin: 0; }
+main { padding: 22px 22px 16px; }
+.heading { display: flex; align-items: center; gap: 11px; margin-bottom: 21px; }
+.app-mark { position: relative; width: 37px; height: 37px; flex: none; border-radius: 11px; background: #e8f5fc; }
+.app-mark span { position: absolute; width: 18px; height: 13px; border: 2px solid #168ac3; border-radius: 3px; }
+.app-mark span:first-child { left: 7px; top: 9px; opacity: .4; }
+.app-mark span:last-child { left: 12px; top: 15px; background: #e8f5fc; }
+.eyebrow { margin: 0 0 3px; color: #6e7f95; font-size: 9px; font-weight: 700; letter-spacing: 1.6px; }
+h1 { margin: 0; font-size: 18px; line-height: 1.3; font-weight: 700; letter-spacing: -.3px; }
+.local-badge { margin-left: auto; padding: 4px 7px; border: 1px solid #e1e6ee; border-radius: 5px; color: #78869a; font-size: 10px; white-space: nowrap; }
+.status-card { min-height: 90px; margin-bottom: 22px; padding: 14px; border: 1px solid #e2e7ef; border-radius: 11px; background: #fff; }
+.status-topline { display: flex; justify-content: space-between; align-items: center; gap: 9px; font-size: 11px; }
+.room-label { color: #687b92; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.phase { display: inline-flex; align-items: center; gap: 5px; flex: none; color: #657489; font-size: 10px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #a2adbc; }
+[data-phase="playing"] .status-dot { background: #22a979; box-shadow: 0 0 0 3px #e6f7ef; }
+[data-phase="playing"] .phase { color: #208e67; }
+[data-phase="error"] .status-dot { background: #d28c30; }
+[data-phase="loading"] .status-dot,
+[data-phase="recovering"] .status-dot,
+[data-phase="waiting-player"] .status-dot { background: #299bcf; }
+.status-message { margin: 12px 0 0; color: #38465b; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+label { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; font-size: 13px; font-weight: 600; }
+label span { color: #7e8ca0; font-size: 10px; font-weight: 400; }
+input { width: 100%; height: 43px; padding: 0 12px; border: 1px solid #d8dfe9; border-radius: 8px; background: #fff; color: #233248; font: inherit; font-size: 12px; outline: none; transition: border-color .15s, box-shadow .15s; }
+input::placeholder { color: #99a5b5; }
+input:focus { border-color: #279ecf; box-shadow: 0 0 0 3px #dff2fa; }
+input:disabled { color: #8d99aa; background: #f0f3f7; }
+.field-help { margin: 8px 0 16px; font-size: 11px; color: #7b899c; line-height: 1.6; }
+button { font-family: inherit; cursor: pointer; transition: background .15s, opacity .15s; }
+button:focus-visible { outline: 2px solid #168cc8; outline-offset: 3px; }
+button:disabled { cursor: default; opacity: .43; }
+.primary-button { width: 100%; min-height: 42px; padding: 10px 12px; border: 0; border-radius: 8px; background: #1497cd; color: #fff; font-size: 13px; font-weight: 600; box-shadow: 0 2px 4px #1497cd18; }
+.primary-button:hover:not(:disabled) { background: #0987bc; }
+.secondary-actions { display: flex; gap: 9px; margin-top: 9px; }
+.secondary-actions button { display: inline-flex; justify-content: center; align-items: center; gap: 5px; flex: 1; min-height: 34px; padding: 7px; border: 1px solid #dfe5ee; border-radius: 7px; background: #fff; color: #607189; font-size: 11px; }
+.secondary-actions button:hover:not(:disabled) { background: #edf3f8; }
+svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.feedback { margin: 14px 0 0; padding: 11px 12px; border: 1px solid #f2dfbd; border-radius: 8px; background: #fffaef; color: #956625; font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
+.audio-note { display: flex; align-items: flex-start; gap: 8px; margin-top: 19px; color: #7a8b9f; }
+.audio-note svg { margin-top: 2px; }
+.audio-note p { margin: 0; font-size: 11px; line-height: 1.7; }
+#audio-hint[data-state="muted"], #audio-hint[data-state="paused"] { color: #a67d39; }
+footer { margin-top: 16px; padding-top: 12px; border-top: 1px solid #e6eaf1; color: #9aa5b4; font-size: 10px; line-height: 1.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  input, button { transition: none; }
+}

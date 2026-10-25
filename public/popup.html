@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>直播画面替换</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <main data-popup-root data-phase="disabled">
+      <header class="heading">
+        <div class="app-mark" aria-hidden="true"><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">BILIBILI LIVE</p>
+          <h1>直播画面替换</h1>
+        </div>
+        <span class="local-badge">仅当前页</span>
+      </header>
+
+      <section class="status-card" aria-label="当前状态">
+        <div class="status-topline">
+          <span id="target-room" class="room-label">正在识别直播间…</span>
+          <span class="phase"><span class="status-dot" aria-hidden="true"></span><span id="phase-label">正在连接</span></span>
+        </div>
+        <p id="status-message" class="status-message" role="status" aria-live="polite">正在读取当前页面的状态。</p>
+      </section>
+
+      <form id="source-form" novalidate>
+        <label for="source-room">画面来源 <span>A 直播间</span></label>
+        <input id="source-room" name="source-room" type="text" placeholder="输入房间号或直播间链接" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="source-help feedback" disabled />
+        <p id="source-help" class="field-help">A 提供画面，B 保留声音、弹幕与互动。</p>
+        <button id="enable-button" class="primary-button" type="submit" disabled>启用画面替换</button>
+      </form>
+
+      <div class="secondary-actions">
+        <button id="retry-button" type="button" disabled><svg aria-hidden="true" viewBox="0 0 20 20"><path d="M16 7a6.5 6.5 0 1 0 .4 5M16 3v4h-4" /></svg>重新连接 A</button>
+        <button id="disable-button" type="button" disabled>关闭替换</button>
+      </div>
+
+      <p id="feedback" class="feedback" role="alert" hidden></p>
+
+      <div class="audio-note">
+        <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m9 4-4 3H2v6h3l4 3V4Zm4 3a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12" /></svg>
+        <p id="audio-hint">正在检查 B 的声音状态。</p>
+      </div>
+
+      <footer>刷新页面后自动关闭 · 两个直播流可能存在延迟差</footer>
+    </main>
+  </body>
+</html>

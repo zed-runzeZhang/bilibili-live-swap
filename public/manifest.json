@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "B站直播画面替换",
+  "description": "观看 A 直播间画面，保留当前 B 直播间的声音、弹幕与互动。",
+  "version": "0.1.0",
+  "minimum_chrome_version": "111",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://api.live.bilibili.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "B站直播画面替换" },
+  "content_scripts": [
+    {
+      "matches": ["https://live.bilibili.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.bilibili.com/blackboard/live/live-activity-player.html*"],
+      "js": ["source-guard.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ]
+}
